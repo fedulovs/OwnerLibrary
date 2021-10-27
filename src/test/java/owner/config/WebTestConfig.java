@@ -2,8 +2,7 @@ package owner.config;
 
 import org.aeonbits.owner.Config;
 
-import java.net.URL;
-
+@Config.Sources({"classpath:${remote}.properties"})
 public interface WebTestConfig extends Config {
 
     @Key("browser")
@@ -14,17 +13,11 @@ public interface WebTestConfig extends Config {
     @DefaultValue("93")
     int browserVersion();
 
+    @Key("baseUrl")
+    @DefaultValue("https://ya.ru")
+    String baseUrl();
+
     @Key("webDriver")
-    @DefaultValue("")
-    URL webDriver();
-
-
-
-
-
-// Имя браузера
-//
-// Версия браузера
-//
-// Локальный или удаленный (RemoteWebDriver)
+    @DefaultValue("221")
+    String webDriver();
 }

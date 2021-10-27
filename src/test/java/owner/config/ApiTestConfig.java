@@ -2,7 +2,10 @@ package owner.config;
 
 import org.aeonbits.owner.Config;
 
-@Config.Sources({"classpath:apiTest.properties"})
+@Config.LoadPolicy(Config.LoadType.FIRST)
+@Config.Sources({"file:/Users/s.fedulov/Documents/apiTest.properties",
+        "classpath:apiTest.properties"
+})
 public interface ApiTestConfig extends Config {
 
     @Key("baseUrl")
